@@ -3,3 +3,5 @@ targeted_data/
 *.pyc
 calls.txt
 *.png
+*.sh~
+.DS_Store
