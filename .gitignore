@@ -5,3 +5,4 @@ calls.txt
 *.png
 *.sh~
 .DS_Store
+conifer-env/
