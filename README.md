@@ -5,6 +5,10 @@ CoNIFER (Copy Number Inference From Exome Reads) can discover CNVs from exome re
 
 ===============
 SETUP:
+#TODO
+# Try to get install via Noah's wheel stuff.
+# Add his HDF5 code back
+
 #ZLIB
 cd ~/src
 wget http://zlib.net/zlib-1.2.8.tar.gz && tar -xf zlib-1.2.8.tar.gz
@@ -39,12 +43,13 @@ pip install Cython
 export HDF5_DIR=$HOME/local/hdf5
 pip install tables
 pip install pysam
-pip install scipy  #NOT WORKING!!! TODO: fix...
+pip install scipy
 
 #Example run
+export LD_LIBRARY_PATH=/home/local/AMC/hermands/local/hdf5/lib
 
 #Collect some count data
 dev/pull_data.sh
 
 #Run first step
-python conifer.py analyze --probes targeted_data/BROCA_v6_0465501.bed --rpkm_dir targeted_data/ --output targeted_data/test.hdf5 --svd 0 --write_svals targeted_data/singular_values.txt --plot_scree targeted_data/screeplot.png --write_sd targeted_data/sd_values.txt
+bpython conifer.py analyze --probes targeted_data/BROCA_v6_0465501.bed --rpkm_dir targeted_data/ --output targeted_data/test.hdf5 --svd 0 --write_svals targeted_data/singular_values.txt --plot_scree targeted_data/screeplot.png --write_sd targeted_data/sd_values.txt
