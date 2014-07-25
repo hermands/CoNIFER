@@ -70,7 +70,6 @@ def CF_analyze(args):
 		plt.gcf().clear()
 		fig = plt.figure(figsize=(10,5))
 		ax = fig.add_subplot(111)
-
 	rpkm_dir = str(args.rpkm_dir[0])
 	rpkm_files = glob.glob(rpkm_dir + "/*")
 	if len(rpkm_files) == 0:
